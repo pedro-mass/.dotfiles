@@ -1,14 +1,16 @@
 - clean: ['~']
 
 - link:
-    ~/.profile: profile
-    ~/.gitconfig: gitconfig
-    ~/.zshrc: zshrc
+    ~/.gitconfig: files/gitconfig
+    ~/.zshrc: files/zshrc
+    ~/.profile: files/profile
+    ~/.dev_profile: files/dev_profile
+    ~/.ifit_profile: files/dev_profile
 
 
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig: files/gitconfig
 
 

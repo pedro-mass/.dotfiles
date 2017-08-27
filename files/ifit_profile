@@ -1,0 +1,6 @@
+echo "loading iFit profile..."
+
+export WORK=~/dev/work
+export PHOENIX=~/dev/work/phoenix/
+
+echo "Loaded iFit profile."
