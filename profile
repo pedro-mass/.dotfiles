@@ -19,6 +19,8 @@ alias less='less -FSRXc'                    # Preferred 'less' implementation
 cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 alias finder='open -a Finder ./'            # f:            Opens current directory in MacOS Finder
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
+trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
+
 
 #   -------------------------------
 #   3.  FILE AND FOLDER MANAGEMENT
