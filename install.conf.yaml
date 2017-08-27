@@ -5,7 +5,7 @@
     ~/.zshrc: files/zshrc
     ~/.profile: files/profile
     ~/.dev_profile: files/dev_profile
-    ~/.ifit_profile: files/dev_profile
+    ~/.ifit_profile: files/ifit_profile
 
 
 - clean: ['~']
