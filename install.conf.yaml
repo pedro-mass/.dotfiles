@@ -11,6 +11,6 @@
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: files/gitconfig
+    ~/.gitconfig: files/.gitconfig
 
 
