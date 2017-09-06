@@ -23,3 +23,24 @@
 	log-stat = log --stat
 	# prune local branches that have been merged with master
 	prune-local = !git branch --merged master --no-color | grep -v '^* master$' | xargs -n1 git branch -d
+	# short status
+	s = status -sb
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# List aliases
+	aliases = config --get-regexp alias
+
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
+[help]
+	autocorrect = 1
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
