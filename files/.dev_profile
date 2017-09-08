@@ -35,16 +35,21 @@ load-nvmrc
 # [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 
+# yarn
+export PATH="$PATH:/opt/yarn-[version]/bin"
+export PATH="$PATH:`yarn global bin`"
+
 
 # personal directories
 export LEARN=~/dev/learn
 export LEARN_LATEST=~/dev/learn/react
 
 # personal commands
-alias show-global-packages="npm list -g --depth=0; yarn global ls"
+alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
-
-# yarn
 alias yarn-test="yarn && yarn test"
+
+
+
 
 echo "Loaded dev profile."
