@@ -31,6 +31,9 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+# Automatic Version Switching for Node: https://github.com/wbyoung/avn
+# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
 
 
 # personal directories
@@ -39,6 +42,7 @@ export LEARN_LATEST=~/dev/learn/react
 
 # personal commands
 alias show-global-packages="npm list -g --depth=0 && yarn global list"
+alias delete-node-modules="rm -rf node_modules/"
 
 # yarn
 alias yarn-test="yarn && yarn test"
