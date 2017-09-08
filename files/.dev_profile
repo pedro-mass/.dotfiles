@@ -41,7 +41,7 @@ export LEARN=~/dev/learn
 export LEARN_LATEST=~/dev/learn/react
 
 # personal commands
-alias show-global-packages="npm list -g --depth=0 && yarn global list"
+alias show-global-packages="npm list -g --depth=0; yarn global ls"
 alias delete-node-modules="rm -rf node_modules/"
 
 # yarn
