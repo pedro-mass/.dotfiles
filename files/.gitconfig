@@ -6,10 +6,13 @@
   template = ~/.gitmessage
 [alias]
 	# Use for updating a branch. Removes unused branches, and moves local commits to the end
+	u = !git update
 	update = pull --rebase --prune
 	co = checkout
 	cob = checkout -b
 	edit-config = config --global -e
+	# Undo the last commit
+	reset = reset --hard HEAD --mixed
 	# Undo the last commit
 	undo = reset HEAD~1 --mixed
 	# Updates the last commit's message
