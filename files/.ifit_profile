@@ -1,6 +1,9 @@
 echo "loading iFit profile..."
 
 export WORK=~/dev/work
+
 export PHOENIX=~/dev/work/phoenix/
+export WEBVIEW=$PHOENIX/webview
+export API=$PHOENIX/api-service
 
 echo "Loaded iFit profile."
