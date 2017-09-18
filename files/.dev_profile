@@ -5,40 +5,36 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# THIS TURNED OUT TO SLOW DOWN TAB COMPLETION: NOT WORTH
 # place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  echo "starting load-nvmrc..."
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   echo "starting load-nvmrc..."
 
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
 
-  echo "finished load-nvmrc"
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-# Automatic Version Switching for Node: https://github.com/wbyoung/avn
-# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
-
+#   echo "finished load-nvmrc"
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 # yarn
 export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH="$PATH:`yarn global bin`"
-
 
 # personal directories
 export LEARN=~/dev/learn
@@ -48,8 +44,5 @@ export LEARN_LATEST=~/dev/learn/react
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
 alias yarn-test="yarn && yarn test"
-
-
-
 
 echo "Loaded dev profile."
