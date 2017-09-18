@@ -20,7 +20,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=5
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -85,10 +85,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.profile
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/pedro.mass/dev/work/phoenix/create_service/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/pedro.mass/dev/work/phoenix/create_service/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/pedro.mass/dev/work/phoenix/create_service/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/pedro.mass/dev/work/phoenix/create_service/node_modules/tabtab/.completions/sls.zsh
