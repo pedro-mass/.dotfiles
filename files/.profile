@@ -16,7 +16,25 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
-cd() { builtin cd "$@"; ll; if [[ -f .nvmrc ]] ; then nvm use > /dev/null ; fi ; }               # Always list directory contents upon 'cd', AND changes node version thru `nvm use`
+
+# Always list directory contents upon 'cd', AND changes node version thru `nvm use`
+cd() {
+  builtin cd "$@" ; ll ; checkNVM
+}
+
+checkNVM() {
+  if [[ -f .nvmrc ]] ; then
+    A=$( cat .nvmrc )
+    A="v$A"
+    B=$( nvm current 2>&1 )
+
+    # only get B equal to length of A
+    B=${B:0:${#A}}
+
+    if [[ $A != $B ]] ; then echo "nvm use $A" && nvm use > /dev/null ; fi ;
+  fi ;
+}
+
 alias finder='open -a Finder ./'            # f:            Opens current directory in MacOS Finder
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
@@ -128,3 +146,6 @@ alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit
 
 source ~/.dev_profile
 source ~/.ifit_profile
+
+# check for NVM version use
+checkNVM
