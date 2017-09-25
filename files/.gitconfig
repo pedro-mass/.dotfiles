@@ -26,6 +26,7 @@
 	log-stat = log --stat
 	# prune local branches that have been merged with master
 	prune-local = !git branch --merged master --no-color | grep -v '^* master$' | xargs -n1 git branch -d
+	pl = !git prune-local
 	# short status
 	s = status -sb
 
