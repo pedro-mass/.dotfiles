@@ -36,6 +36,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH="$PATH:`yarn global bin`"
 
+# ngrok
+export PATH="$PATH:/Applications"
+
 # personal directories
 export LEARN=~/dev/learn
 export LEARN_LATEST=~/dev/learn/react
