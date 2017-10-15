@@ -144,6 +144,10 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
 
 
+#   -----------------------------
+#   #: Personal Commands
+#   -----------------------------
+
 source ~/.dev_profile
 source ~/.ifit_profile
 
