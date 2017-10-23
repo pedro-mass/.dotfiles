@@ -88,7 +88,7 @@ source ~/.profile
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/pedro.mass/dev/work/phoenix/api-service/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/pedro.mass/dev/work/phoenix/api-service/node_modules/tabtab/.completions/serverless.zsh
+[[ -f ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/serverless.zsh ]] && . ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/pedro.mass/dev/work/phoenix/api-service/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/pedro.mass/dev/work/phoenix/api-service/node_modules/tabtab/.completions/sls.zsh
+[[ -f ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/sls.zsh ]] && . ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/sls.zsh
