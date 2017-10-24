@@ -1,0 +1,24 @@
+echo "loading profile-dev..."
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# yarn
+export PATH="$PATH:/opt/yarn-[version]/bin"
+export PATH="$PATH:`yarn global bin`"
+
+# ngrok
+export PATH="$PATH:/Applications"
+
+# personal directories
+export LEARN=~/dev/learn
+export LEARN_LATEST=~/dev/learn/react
+
+# personal commands
+alias show-global-packages="npm list -g --depth=0; yarn global list"
+alias delete-node-modules="rm -rf node_modules/"
+alias yarn-test="yarn && yarn test"
+
+echo "loaded profile-dev."

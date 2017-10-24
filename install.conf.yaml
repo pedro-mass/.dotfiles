@@ -4,13 +4,8 @@
     ~/.gitconfig: files/.gitconfig
     ~/.zshrc: files/.zshrc
     ~/.profile: files/.profile
-    ~/.dev_profile: files/.dev_profile
-    ~/.ifit_profile: files/.ifit_profile
-
-
-- clean: ['~']
-
-- link:
-    ~/.gitconfig: files/.gitconfig
+    ~/.profile-improvements: files/.profile-improvements
+    ~/.profile-dev: files/.profile-dev
+    ~/.profile-ifit: files/.profile-ifit
 
 

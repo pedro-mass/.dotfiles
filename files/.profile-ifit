@@ -1,4 +1,4 @@
-echo "loading iFit profile..."
+echo "loading profile-ifit..."
 
 export WORK=~/dev/work
 
@@ -6,4 +6,4 @@ export PHOENIX=~/dev/work/phoenix/
 export WEBVIEW=$PHOENIX/webview
 export API=$PHOENIX/api-service
 
-echo "Loaded iFit profile."
+echo "loaded profile-ifit."
