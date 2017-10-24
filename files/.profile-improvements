@@ -20,19 +20,6 @@ cd() {
   builtin cd "$@" ; ll ; checkNVM
 }
 
-checkNVM() {
-  if [[ -f .nvmrc ]] ; then
-    A=$( cat .nvmrc )
-    A="v$A"
-    B=$( nvm current 2>&1 )
-
-    # only get B equal to length of A
-    B=${B:0:${#A}}
-
-    if [[ $A != $B ]] ; then echo "nvm use $A" && nvm use > /dev/null ; fi ;
-  fi ;
-}
-
 alias finder='open -a Finder ./'            # f:            Opens current directory in MacOS Finder
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
@@ -140,8 +127,5 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 #   ---------------------------------------
 
 alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
-
-# check for NVM version use
-checkNVM
 
 echo "loaded profile-improvements."
