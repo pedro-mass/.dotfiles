@@ -8,9 +8,11 @@ export NVM_DIR="$HOME/.nvm"
 # yarn
 export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH="$PATH:`yarn global bin`"
+alias yarn-test="yarn && yarn test"
 
 # ngrok
 export PATH="$PATH:/Applications"
+alias ngrok-cra="ngrok http 3000"
 
 # check for NVM version use
 checkNVM() {
@@ -34,6 +36,6 @@ export LEARN_LATEST=~/dev/learn/react
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
-alias yarn-test="yarn && yarn test"
+
 
 echo "loaded profile-dev."
