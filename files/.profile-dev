@@ -37,5 +37,6 @@ export LEARN_LATEST=~/dev/learn/react
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
 
+alias fix-brew-permissions="sudo chown -R "$USER":admin /usr/local"
 
 echo "loaded profile-dev."
