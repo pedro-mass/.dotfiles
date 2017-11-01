@@ -6,5 +6,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 source ~/.profile-improvements
 source ~/.profile-dev
 source ~/.profile-ifit
+source ~/.profile-secret
 
 echo "loaded profile."
