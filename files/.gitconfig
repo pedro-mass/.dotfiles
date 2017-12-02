@@ -25,7 +25,7 @@
 	log-pretty = log --pretty=oneline --abbrev-commit
 	log-stat = log --stat
 	# remove branches that have been merged to current branch
-  cleanup = "!git branch --merged | grep -v -E '\\*\\|master|dev|test' | xargs -n1 git branch -d"
+  cleanup = "!git branch --merged | grep -v -E '(\\*|master|dev|test)' | xargs -n1 git branch -d"
 	# short status
 	s = status -sb
 
@@ -47,3 +47,8 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
