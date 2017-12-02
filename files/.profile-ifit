@@ -2,8 +2,7 @@ echo "loading profile-ifit..."
 
 export WORK=~/dev/work
 
-export PHOENIX=~/dev/work/phoenix/
-export WEBVIEW=$PHOENIX/webview
-export API=$PHOENIX/api-service
+export WEBVIEW=$WORK/phoenix-webview
+export API=$WORK/phoenix-api-service
 
 echo "loaded profile-ifit."
