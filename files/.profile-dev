@@ -31,7 +31,7 @@ checkNVM
 
 # personal directories
 export LEARN=~/dev/learn
-export LEARN_LATEST=~/dev/learn/react
+export PROJECTS=~/dev/projects
 
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
