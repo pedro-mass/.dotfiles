@@ -8,4 +8,6 @@ source ~/.profile-dev
 source ~/.profile-ifit
 source ~/.profile-secret
 
+alias update-dotfiles="~/.dotfiles/install"
+
 echo "loaded profile."
