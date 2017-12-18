@@ -36,7 +36,8 @@ export PROJECTS=~/dev/projects
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
-
 alias fix-brew-permissions="sudo chown -R "$USER":admin /usr/local"
+
+alias upgrade="yarn upgrade-interactive --latest"
 
 echo "loaded profile-dev."
