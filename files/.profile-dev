@@ -32,6 +32,7 @@ checkNVM
 # personal directories
 export LEARN=~/dev/learn
 export PEDRO_PROJECTS=~/dev/pedro-projects
+export SIDE_PROJECT=$PEDRO_PROJECTS/daily-challenge
 
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
