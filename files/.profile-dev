@@ -12,7 +12,6 @@ alias yarn-test="yarn && yarn test"
 
 # ngrok
 export PATH="$PATH:/Applications"
-alias ngrok-cra="ngrok http 3000"
 
 # check for NVM version use
 checkNVM() {
@@ -38,6 +37,7 @@ export SIDE_PROJECT=$PEDRO_PROJECTS/daily-challenge
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
 alias fix-brew-permissions="sudo chown -R "$USER":admin /usr/local"
+alias ngrok-cra="ngrok http 3000"
 
 alias upgrade="yarn upgrade-interactive --latest"
 
