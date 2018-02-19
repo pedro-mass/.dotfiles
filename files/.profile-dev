@@ -28,7 +28,6 @@ checkNVM() {
 checkNVM
 
 # HUB config - https://github.com/github/hub
-alias git=hub
 eval "$(hub alias -s)"
 
 # personal directories
