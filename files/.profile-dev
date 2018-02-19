@@ -8,7 +8,6 @@ export NVM_DIR="$HOME/.nvm"
 # yarn
 export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH="$PATH:`yarn global bin`"
-alias yarn-test="yarn && yarn test"
 
 # ngrok
 export PATH="$PATH:/Applications"
@@ -27,6 +26,10 @@ checkNVM() {
   fi ;
 }
 checkNVM
+
+# HUB config - https://github.com/github/hub
+alias git=hub
+eval "$(hub alias -s)"
 
 # personal directories
 export LEARN=~/dev/learn
