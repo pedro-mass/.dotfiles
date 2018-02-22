@@ -3,7 +3,7 @@
 	email = pedro.j.mass@gmail.com
 	name = Pedro Mass
 [commit]
-  template = ~/.gitmessage
+	template = ~/.gitmessage
 [alias]
 	# Use for updating a branch. Removes unused branches, and moves local commits to the end
 	u = !git update
@@ -28,6 +28,9 @@
   cleanup = "!git branch --merged | grep -v -E '(\\*|master|dev|test)' | xargs -n1 git branch -d"
 	# short status
 	s = status -sb
+	# stash everything (including untracked), except for staged changes
+	stash-everything = stash --include-untracked --keep-index
+	se = !git stash-everything
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
