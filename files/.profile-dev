@@ -27,9 +27,6 @@ checkNVM() {
 }
 checkNVM
 
-# HUB config - https://github.com/github/hub
-eval "$(hub alias -s)"
-
 # personal directories
 export LEARN=~/dev/learn
 export PEDRO_PROJECTS=~/dev/pedro-projects
@@ -40,7 +37,7 @@ alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
 alias fix-brew-permissions="sudo chown -R "$USER":admin /usr/local"
 alias ngrok-cra="ngrok http 3000"
-alias update-dotfiles="~/.dotfiles./install"
+alias update-dotfiles="~/.dotfiles/install"
 
 alias upgrade="yarn upgrade-interactive --latest"
 
