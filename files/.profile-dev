@@ -28,7 +28,7 @@ checkNVM() {
 checkNVM
 
 # HUB config - https://github.com/github/hub
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 # personal directories
 export LEARN=~/dev/learn
