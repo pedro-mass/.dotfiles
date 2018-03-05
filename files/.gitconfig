@@ -5,46 +5,40 @@
 [commit]
 	template = ~/.gitmessage
 [alias]
-	# Use for updating a branch. Removes unused branches, and moves local commits to the end
-	u = !git update
-	update = pull --rebase --prune
+	# List aliases
+	aliases = config --get-regexp alias
+	# shows these aliases
+	alias = !git aliases
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
+	branches = branch -a
+	# remove branches that have been merged to current branch
+  cleanup = "!git branch --merged | grep -v -E '(\\*|master|dev|test)' | xargs -n1 git branch -d"
 	co = checkout
 	cob = checkout -b
 	edit-config = config --global -e
-	# Undo the last commit
-	reset = reset --hard HEAD --mixed
-	# Undo the last commit
-	undo = reset HEAD~1 --mixed
-	# Updates the last commit's message
-	amend = commit -a --amend
-	# This adds and commits all current files to WIPE SAVEPOINT. Then moves back a commit
-	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-	# shows these aliases
-	alias = config --get-regexp alias
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	# shows one line logs
 	log-pretty = log --pretty=oneline --abbrev-commit
 	log-stat = log --stat
-	# remove branches that have been merged to current branch
-  cleanup = "!git branch --merged | grep -v -E '(\\*|master|dev|test)' | xargs -n1 git branch -d"
+	# Undo the last commit
+	reset = reset --hard HEAD --mixed
+	remotes = remote -v
 	# short status
 	s = status -sb
 	# stash everything (including untracked), except for staged changes
 	stash-everything = stash --include-untracked --keep-index
 	se = !git stash-everything
-
-	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
+	# Undo the last commit
+	undo = reset HEAD~1 --mixed
+	# Use for updating a branch. Removes unused branches, and moves local commits to the end
+	u = !git update
+	update = pull --rebase --prune
+	# This adds and commits all current files to WIPE SAVEPOINT. Then moves back a commit
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 	
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-
-	# List aliases
-	aliases = config --get-regexp alias
-
-	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
 [help]
 	autocorrect = 1
 [merge]
