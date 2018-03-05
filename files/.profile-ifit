@@ -6,5 +6,7 @@ export API=$WORK/phoenix-api-service
 
 # for ifit/ifit
 export NODE_PATH="$(pwd)"
+# pyenv
+eval "$(pyenv init -)"
 
 echo "loaded profile-ifit."
