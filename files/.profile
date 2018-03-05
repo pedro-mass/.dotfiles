@@ -9,5 +9,6 @@ source ~/.profile-ifit
 source ~/.profile-secret
 
 alias update-dotfiles="~/.dotfiles/install"
+alias reset-shell="exec "$SHELL""
 
 echo "loaded profile."
