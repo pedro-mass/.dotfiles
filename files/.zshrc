@@ -85,10 +85,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.profile
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/serverless.zsh ]] && . ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/sls.zsh ]] && . ~/dev/work/phoenix/api-service/node_modules/tabtab/.completions/sls.zsh
