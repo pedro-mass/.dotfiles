@@ -14,6 +14,8 @@
 	branches = branch -a
 	# remove branches that have been merged to current branch
   cleanup = "!git branch --merged | grep -v -E '(\\*|master|dev|test)' | xargs -n1 git branch -d"
+  cleanup-force = "!git branch --merged | grep -v -E '(\\*|master|dev|test)' | xargs -n1 git branch -D"
+	cf = "!git cleanup-force"
 	co = checkout
 	cob = checkout -b
 	edit-config = config --global -e
