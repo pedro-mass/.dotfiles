@@ -9,6 +9,6 @@ export NODE_PATH="/Users/work/dev/work/ifit"
 # pyenv
 eval "$(pyenv init -)"
 
-alias review-setup="git checkout .; git checkout test; git branches" 
+alias review-setup="git checkout .; git checkout test; git update; git branches" 
 
 echo "loaded profile-ifit."
