@@ -51,7 +51,7 @@ export UPDATE_ZSH_DAYS=5
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn)
+plugins=(git yarn wd web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,3 +85,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.profile
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/work/dev/work/test-create-service/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/work/dev/work/test-create-service/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/work/dev/work/test-create-service/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/work/dev/work/test-create-service/node_modules/tabtab/.completions/sls.zsh
