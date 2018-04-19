@@ -41,4 +41,7 @@ alias update-dotfiles="~/.dotfiles/install"
 
 alias upgrade="yarn upgrade-interactive --latest"
 
+# git commands
+alias gu="git pull --rebase --prune"
+
 echo "loaded profile-dev."
