@@ -46,5 +46,6 @@ alias git-cheatsheet="cat /Users/work/.oh-my-zsh/plugins/git/git.plugin.zsh"
 alias gu="git pull --rebase --prune"
 alias gtl="git tag -l"
 alias gta="gtl"
+alias gbdf="git branch -D"
 
 echo "loaded profile-dev."
