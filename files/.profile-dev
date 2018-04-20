@@ -43,5 +43,6 @@ alias upgrade="yarn upgrade-interactive --latest"
 
 # git commands
 alias gu="git pull --rebase --prune"
+alias git-cheatsheet="cat /Users/work/.oh-my-zsh/plugins/git/git.plugin.zsh"
 
 echo "loaded profile-dev."
