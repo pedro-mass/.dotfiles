@@ -47,5 +47,7 @@ alias gu="git pull --rebase --prune"
 alias gtl="git tag -l"
 alias gta="gtl"
 alias gbdf="git branch -D"
+alias git-stash-everything="git stash --include-untracked --keep-index"
+alias gse="git-stash-everything"
 
 echo "loaded profile-dev."
