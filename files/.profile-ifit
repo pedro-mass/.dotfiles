@@ -11,5 +11,17 @@ eval "$(pyenv init -)"
 
 alias review-setup="git checkout .; git checkout test; git update; git branches" 
 alias review-setup-master="git checkout .; git checkout master; git update; git branches" 
+function viper-mongo {
+  mongo \
+    --host galactica.ifit-dev.com \
+    --port $1 \
+    --ssl \
+    --sslCAFile ~/.ssh/mongodb.ca.cert.pem \
+    --sslPEMKeyFile ~/.ssh/mongodb.viper-user.key-and-cert.pem
+}
+
+function viper-mongo-test {
+  viper-mongo 60000
+}
 
 echo "loaded profile-ifit."
