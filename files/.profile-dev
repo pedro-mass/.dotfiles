@@ -35,10 +35,11 @@ export SIDE_PROJECT=$PEDRO_PROJECTS/daily-challenge
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
-alias fix-brew-permissions="chgrp -R brew $(brew --prefix)/*; chmod -R g+w $(brew --prefix)/*"
+fix-brew-permissions() {
+  sudo chgrp -R admin $(brew --prefix)/*
+  sudo chmod -R g+w $(brew --prefix)/*
+}
 alias ngrok-cra="ngrok http 3000"
-alias update-dotfiles="cd ~/.dotfiles; git update && ./install"
-
 alias upgrade="yarn upgrade-interactive --latest"
 
 whats-on-port() {
