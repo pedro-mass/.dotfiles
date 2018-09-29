@@ -35,9 +35,7 @@ export SIDE_PROJECT=$PEDRO_PROJECTS/daily-challenge
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
 alias delete-node-modules="rm -rf node_modules/"
-fix-brew-permissions() {
-  sudo chown -R $(whoami) $(brew --prefix)/*
-}
+alias fix-brew-permissions="sudo chown -R $(whoami) $(brew --prefix)/*"
 alias ngrok-cra="ngrok http 3000"
 alias upgrade="yarn upgrade-interactive --latest"
 
