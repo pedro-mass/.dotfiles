@@ -12,7 +12,9 @@ eval "$(pyenv init -)"
 alias cold-start="yarn && yarn start"
 alias cold-test="yarn && yarn test"
 alias review-setup="git checkout .; git checkout test; git update; git branches"
+alias rs="review-setup"
 alias review-setup-master="git checkout .; git checkout master; git update; git branches"
+alias rsm="review-setup-master"
 
 function viper-mongo {
   mongo \
