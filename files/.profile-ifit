@@ -16,6 +16,9 @@ alias rs="review-setup"
 alias review-setup-master="git checkout .; git checkout master; git update; git branches"
 alias rsm="review-setup-master"
 
+# code shortcuts
+alias code-feed="code $WORK/full-stack-feed.code-workspace"
+
 function viper-mongo {
   mongo \
     --host galactica.ifit-dev.com \
