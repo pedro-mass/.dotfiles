@@ -7,9 +7,9 @@ source ~/.profile-improvements
 source ~/.profile-dev
 source ~/.profile-ifit
 source ~/.profile-secret
-source ~/.profile-local
 
 alias update-dotfiles="cd ~/.dotfiles/ && git update && ./install"
 alias reset-shell="exec "$SHELL""
+alias edit-profile="code --new-window ~/"
 
 echo "loaded profile."
