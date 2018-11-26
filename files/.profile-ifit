@@ -20,6 +20,7 @@ alias rsm="review-setup-master"
 
 # code shortcuts
 alias code-feed="code $WORK/full-stack-feed.code-workspace"
+alias code-workouts="code $WORK/wolf-workouts/wolf-workouts.code-workspace"
 
 function viper-mongo {
   mongo \
