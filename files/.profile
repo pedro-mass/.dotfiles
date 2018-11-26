@@ -1,5 +1,8 @@
 echo "loading profile..."
 
+# slack themes: https://github.com/mykeels/slack-theme-cli
+export PATH=$PATH:/Users/personal/slack-themes
+
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
