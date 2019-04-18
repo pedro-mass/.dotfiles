@@ -38,6 +38,7 @@ alias delete-node-modules="rm -rf node_modules/"
 alias fix-brew-permissions="sudo chown -R $(whoami) $(brew --prefix)/* && chmod 0700 /usr/local/var/run/watchman"
 alias ngrok-cra="ngrok http 3000"
 alias upgrade="yarn upgrade-interactive --latest"
+alias alert="npx okimdone"
 
 whats-on-port() {
   sudo lsof -i tcp:$1
@@ -46,6 +47,15 @@ whats-on-port() {
 whats-on-port-3000() {
   sudo lsof -i tcp:3000
 }
+
+yarn-reset () {
+  echo "deleting ./node_modules ..."
+  rm -rf ./node_modules
+  echo "deleted ./node_modules"
+  yarn install
+}
+alias cold-install="yarn-reset"
+alias ci="cold-install"
 
 # git commands
 alias git-cheatsheet="cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh"
