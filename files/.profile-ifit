@@ -35,5 +35,20 @@ function viper-mongo-test {
   viper-mongo 60000
 }
 
+function push-dev {
+  B=$(git rev-parse --abbrev-ref HEAD)
+  echo "Branch found: $B"
+
+  if [[ $B != "dev" ]]; then
+    git checkout dev
+    git reset --hard $B
+    git push --force
+    echo "Pushed '$B' to 'dev'!"
+    git checkout $B
+  else
+    echo "Can't push dev to dev"
+  fi
+}
+
 echo "loaded profile-ifit."
 
