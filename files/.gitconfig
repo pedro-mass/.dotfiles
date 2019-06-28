@@ -52,7 +52,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /Users/work/.gitignore_global
+	excludesfile = /Users/Pedro.Mass/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
