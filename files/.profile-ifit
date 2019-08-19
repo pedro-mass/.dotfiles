@@ -21,7 +21,7 @@ alias serveo="ssh -R 80:localhost:3000 serveo.net"
 
 # code shortcuts
 alias code-feed="code $WORK/full-stack-feed.code-workspace"
-alias code-workouts="code $WORK/wolf-workouts/wolf-workouts.code-workspace"
+alias code-workouts="code $WORK/workouts/wolf-workouts.code-workspace"
 
 function viper-mongo {
   mongo \
