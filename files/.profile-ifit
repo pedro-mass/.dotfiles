@@ -18,6 +18,8 @@ alias rs="review-setup"
 alias review-setup-master="git checkout .; git checkout master; git update; git branches"
 alias rsm="review-setup-master"
 alias serveo="ssh -R 80:localhost:3000 serveo.net"
+alias slack-dark="~/scripts/darkSlack.sh"
+alias slack-light="~/scripts/darkSlack.sh --revert"
 
 # code shortcuts
 alias code-feed="code $WORK/full-stack-feed.code-workspace"
