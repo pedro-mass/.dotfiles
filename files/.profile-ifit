@@ -5,7 +5,7 @@ export WEBVIEW=$WORK/phoenix-webview
 export API=$WORK/phoenix-api-service
 
 # for ifit/ifit
-export NODE_PATH="/Users/pedromass/dev/work/ifit"
+export NODE_PATH="/Users/$username/dev/work/ifit"
 # pyenv
 eval "$(pyenv init -)"
 

@@ -40,7 +40,7 @@
 	update = pull --rebase --prune
 	# This adds and commits all current files to WIPE SAVEPOINT. Then moves back a commit
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-	
+
 [help]
 	autocorrect = 1
 [merge]
@@ -52,10 +52,10 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	excludesfile = /Users/pedromass/.gitignore_global
+	excludesfile = /Users/Pedro.Mass/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

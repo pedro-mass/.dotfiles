@@ -1,9 +1,5 @@
 echo "loading profile..."
 
-# slack themes: https://github.com/mykeels/slack-theme-cli
-export PATH=$PATH:/Users/pedromass/bin/slack-theme
-export SLACK_THEME_SHELL_PROFILE="/Users/pedromass/.zshrc"
-
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
