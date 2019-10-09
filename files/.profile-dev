@@ -9,6 +9,17 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH="$PATH:`yarn global bin`"
 
+
+# .zshrc
+# ...
+# hub - github cli tool
+if hash hub 2>/dev/null; then
+  eval "$(hub alias -s)"
+  alias gstat='tput sc; until [ "$(hub ci-status)" != "pending" ]; do tput ed; echo ""; hub ci-status -v; echo "\n Checking again in 10..."; sleep 10; tput rc; done;  say "Build Complete"; tput ed; echo ""; hub ci-status -v; echo ""; hub ci-status; [ "$(hub ci-status)" = "success" ];'
+else
+  echo "Hub command not installed - please run \`brew install hub\`"
+fi
+
 # ngrok
 export PATH="$PATH:/Applications"
 
