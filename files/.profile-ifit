@@ -20,7 +20,7 @@ review() {
   git checkout . && git checkout $1 && git sync && eval $COMMAND
 }
 alias rs="review"
-alias review-test="rst"
+alias review-test="rs"
 alias rsm="review master $1"
 alias review-master="rsm"
 
