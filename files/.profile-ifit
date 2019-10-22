@@ -13,10 +13,17 @@ alias cold-start="yarn && yarn start"
 alias cs="cold-start"
 alias cold-test="yarn && yarn test"
 alias ct="cold-test"
-alias review-setup="git checkout .; git checkout test; git update; git branches"
-alias rs="review-setup"
-alias review-setup-master="git checkout .; git checkout master; git update; git branches"
-alias rsm="review-setup-master"
+review() {
+  [ -z "$1" ] && BRANCH='test' || BRANCH=$1
+  [ -z "$2" ] && COMMAND="git branches" || COMMAND="gcr $2"
+
+  git checkout . && git checkout $1 && git sync && eval $COMMAND
+}
+alias rst="review"
+alias review-test="rst"
+alias rsm="review master $1"
+alias review-master="rsm"
+
 alias serveo="ssh -R 80:localhost:3000 serveo.net"
 alias slack-dark="~/scripts/darkSlack.sh"
 alias slack-light="~/scripts/darkSlack.sh --revert"
