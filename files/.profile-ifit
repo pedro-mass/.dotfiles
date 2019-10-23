@@ -17,12 +17,12 @@ review() {
   [ -z "$1" ] && BRANCH='test' || BRANCH=$1
   [ -z "$2" ] && COMMAND="git branches" || COMMAND="gcr $2"
 
-  git checkout . && git checkout $1 && git sync && eval $COMMAND
+  gco . && gco $1 && git sync && eval $COMMAND
 }
-alias rs="review"
-alias review-test="rs"
+alias rs="review test $1"
+alias review-test="rs test $1"
 alias rsm="review master $1"
-alias review-master="rsm"
+alias review-master="rsm $1"
 
 alias serveo="ssh -R 80:localhost:3000 serveo.net"
 alias slack-dark="~/scripts/darkSlack.sh"
