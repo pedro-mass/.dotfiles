@@ -11,6 +11,7 @@ alias update-dotfiles="cd ~/.dotfiles/ && git update && ./install"
 alias reset-shell="exec "$SHELL""
 alias edit-profile="code --new-window ~/.dotfiles"
 
+alias fin="say Fin"
 alias plank="say 'Fin. Good Planking'"
 
 echo "loaded profile."
