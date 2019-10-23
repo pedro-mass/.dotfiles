@@ -11,6 +11,8 @@ alias update-dotfiles="cd ~/.dotfiles/ && git update && ./install"
 alias reset-shell="exec "$SHELL""
 alias edit-profile="code --new-window ~/.dotfiles"
 
+alias plank="say 'Good Planking'"
+
 echo "loaded profile."
 
 export NVM_DIR="$HOME/.nvm"
