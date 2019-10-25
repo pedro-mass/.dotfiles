@@ -47,7 +47,7 @@ function viper-mongo-test {
 }
 
 push-dev () {
-  B=$(git rev-parse --abbrev-ref HEAD)
+  [ -z "$1" ] && B=$(git rev-parse --abbrev-ref HEAD) || B=$1
   echo "Branch found: $B"
 
   if [[ $B != "dev" ]]; then
