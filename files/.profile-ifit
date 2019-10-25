@@ -25,8 +25,6 @@ alias rsm="review master $1"
 alias review-master="rsm $1"
 
 alias serveo="ssh -R 80:localhost:3000 serveo.net"
-alias slack-dark="~/scripts/darkSlack.sh"
-alias slack-light="~/scripts/darkSlack.sh --revert"
 
 # code shortcuts
 alias code-feed="code $WORK/full-stack-feed.code-workspace"

@@ -41,7 +41,6 @@ checkNVM
 # personal directories
 export LEARN=~/dev/learn
 export PEDRO_PROJECTS=~/dev/pedro-projects
-export SIDE_PROJECT=$PEDRO_PROJECTS/daily-challenge
 
 # personal commands
 alias show-global-packages="npm list -g --depth=0; yarn global list"
@@ -49,7 +48,7 @@ alias delete-node-modules="rm -rf node_modules/"
 alias fix-brew-permissions="sudo chown -R $(whoami) $(brew --prefix)/* && chmod 0700 /usr/local/var/run/watchman"
 alias ngrok-cra="ngrok http 3000"
 alias upgrade="yarn upgrade-interactive --latest"
-alias alert="npx okimdone"
+alias alert="say ok i am done"
 
 whats-on-port() {
   sudo lsof -i tcp:$1
