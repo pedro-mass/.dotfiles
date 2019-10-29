@@ -76,6 +76,7 @@ alias gbdf="git branch -D"
 alias git-stash-everything="git stash --include-untracked --keep-index"
 alias gse="git-stash-everything"
 alias gpf="git push --force"
+alias gs="git sync"
 gcr() {
   gco remotes/origin/$1
 }
