@@ -80,5 +80,6 @@ alias gs="git sync"
 gcr() {
   gco remotes/origin/$1
 }
+alias gcoo='git branch -l | fzf | xargs git checkout'
 
 echo "loaded profile-dev."
