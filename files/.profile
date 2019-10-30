@@ -14,6 +14,8 @@ alias edit-profile="code --new-window ~/.dotfiles"
 alias fin="say Fin"
 alias plank="say 'Fin. Good Planking'"
 
+
+
 echo "loaded profile."
 
 export NVM_DIR="$HOME/.nvm"
@@ -21,3 +23,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+j() {
+  if [[ "$#" -ne 0 ]]; then
+    cd $(autojump $@)
+    return
+  fi
+  cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
+}
