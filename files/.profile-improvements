@@ -15,6 +15,9 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 
+alias cat='bat --style=numbers --color=always'
+alias top='htop'
+
 # Always list directory contents upon 'cd', AND changes node version thru `nvm use`
 cd() {
   builtin cd "$@" ; ll ; checkNVM
