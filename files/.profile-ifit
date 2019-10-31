@@ -31,6 +31,10 @@ alias code-feed="code $WORK/full-stack-feed.code-workspace"
 alias code-workouts="code $WORK/workouts/wolf-workouts.code-workspace"
 alias code-scratch="code $WORK/scratchpad.code-workspace"
 
+# mongo settings
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/mongodb-community@3.4/bin:$PATH"
+
 function viper-mongo {
   mongo \
     --host galactica.ifit-dev.com \
