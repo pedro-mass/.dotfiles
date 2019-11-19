@@ -55,11 +55,8 @@ push-dev () {
   if [[ $B == "dev" ]]; then
     echo "Can't push dev to dev"
   else
-    git checkout dev
-    git reset --hard $B
-    git push --force
+    git push origin $B:dev -f
     echo "Pushed '$B' to 'dev'!"
-    git checkout $B
   fi
 }
 
