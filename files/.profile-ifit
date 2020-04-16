@@ -60,5 +60,11 @@ push-dev () {
   fi
 }
 
+function assumeIfitDev() {
+  unset AWS_PROFILE
+  aws-google-auth --username pedrom@ifit.com --profile ifit-dev --idp-id C02qg9qrp --sp-id 343618191391 --duration 43200 --region us-east-1 --role-arn arn:aws:iam::087082158606:role/ifit-dev-role --keyring
+  export AWS_PROFILE=ifit-dev
+}
+
 echo "loaded profile-ifit."
 
