@@ -53,9 +53,14 @@
 	required = true
 [core]
 	excludesfile = /Users/Pedro.Mass/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	editor = code --wait
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+# [difftool "sourcetree"]
+# 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+# 	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -63,4 +68,4 @@
 	branch = false
 	stash = false
 [push]
-	default = upstream
+	default = current
