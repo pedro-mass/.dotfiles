@@ -20,8 +20,8 @@ alias top='htop'
 
 # Always list directory contents upon 'cd', AND changes node version thru `nvm use`
 cd() {
-#   builtin cd "$@" ; ll ; checkNVM
-  builtin cd "$@" ; ll ;
+  builtin cd "$@" ; ll ; checkNVM
+#   builtin cd "$@" ; ll ;
 }
 
 alias finder='open -a Finder ./'            # f:            Opens current directory in MacOS Finder
