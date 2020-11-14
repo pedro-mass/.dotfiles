@@ -1,15 +1,25 @@
 source ~/.dotfiles/files/config.sh
 
+source ~/.dotfiles/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$username/.oh-my-zsh
 
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+# Load the theme.
+antigen theme robbyrussell
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +67,13 @@ export UPDATE_ZSH_DAYS=5
 # export NVM_LAZY_LOAD=true
 # export NVM_AUTOLOAD=1
 export NVM_AUTO_USE=true
-plugins=(git yarn autojump zsh-nvm nvm)
+# plugins=(git yarn autojump zsh-nvm nvm)
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle yarn
+antigen bundle autojump
+antigen bundle zsh-nvm
+antigen bundle nvm
 
 
 source $ZSH/oh-my-zsh.sh
@@ -93,3 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.profile
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Tell Antigen that you're done.
+antigen apply
