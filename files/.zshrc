@@ -53,7 +53,12 @@ export UPDATE_ZSH_DAYS=5
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn autojump)
+# export NVM_LAZY=1
+# export NVM_LAZY_LOAD=true
+# export NVM_AUTOLOAD=1
+export NVM_AUTO_USE=true
+plugins=(git yarn autojump zsh-nvm nvm)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,13 +92,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.profile
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/$username/dev/work/workouts/heckle/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/$username/dev/work/workouts/heckle/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/$username/dev/work/workouts/heckle/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/$username/dev/work/workouts/heckle/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/$username/dev/work/workouts/heckle/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/$username/dev/work/workouts/heckle/node_modules/tabtab/.completions/slss.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
