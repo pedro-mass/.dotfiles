@@ -15,13 +15,15 @@ alias cold-test="yarn && yarn test"
 alias ct="cold-test"
 review() {
   [ -z "$1" ] && BRANCH='test' || BRANCH=$1
-  [ -z "$2" ] && COMMAND="git branches" || COMMAND="gcr $2"
+  [ -z "$2" ] && COMMAND="" || COMMAND="gcr $2"
 
   gco . && gco $1 && git sync && eval $COMMAND
 }
 alias rs="review test $1"
+alias rsc="review test $1 && code . -r"
 alias review-test="rs test $1"
 alias rsm="review master $1"
+alias rsmc="review test $1 && code . -r"
 alias review-master="rsm $1"
 
 alias serveo="ssh -R 80:localhost:3000 serveo.net"
@@ -60,10 +62,64 @@ push-dev () {
   fi
 }
 
-function assumeIfitDev() {
-  unset AWS_PROFILE
-  aws-google-auth --username pedrom@ifit.com --profile ifit-dev --idp-id C02qg9qrp --sp-id 343618191391 --duration 43200 --region us-east-1 --role-arn arn:aws:iam::087082158606:role/ifit-dev-role --keyring
-  export AWS_PROFILE=ifit-dev
+# function assumeIfitDev() {
+#   unset AWS_PROFILE
+#   aws-google-auth --username pedrom@ifit.com --profile ifit-dev --idp-id C02qg9qrp --sp-id 343618191391 --duration 43200 --region us-east-1 --role-arn arn:aws:iam::087082158606:role/ifit-dev-role --keyring
+#   export AWS_PROFILE=ifit-dev
+# }
+
+function set-aws-profile () {
+  if [ -n "${AWS_PROFILE}" ]; then
+    return 0
+  fi
+
+  TEMP_CREDS=$(cat ~/.aws/credentials | grep -B 4 -A 1 "aws_session_expiration")
+
+  if [ -z "${TEMP_CREDS}" ]; then
+    return 0
+  fi
+
+  TEMP_CREDS_DATE=$(echo "${TEMP_CREDS}" | grep "aws_session_expiration" | cut -d " " -f 3)
+  TEMP_CREDS_ROLE=$(echo "${TEMP_CREDS}" | head -n 1 | sed "s/\[//g" | sed "s/\]//g")
+
+
+  if [[ $(date -u "+%Y-%m-%dT%H:%M:%S+0000") < "${TEMP_CREDS_DATE}" ]]; then
+    echo "INFO: The environment variable \`AWS_PROFILE\` has been set to \`${TEMP_CREDS_ROLE}\`. Use \`unset AWS_PROFILE\` if you want to unset it."
+    export AWS_PROFILE="${TEMP_CREDS_ROLE}"
+  fi
+}
+
+set-aws-profile
+
+function get-ifit-aws-creds () {
+  ROLE=${1:-ifit-dev-role}
+
+  aws-google-auth \
+    --duration 43200 \
+    --idp-id C02qg9qrp \
+    --keyring \
+    --profile ${ROLE} \
+    --region us-east-1 \
+    --role-arn arn:aws:iam::087082158606:role/${ROLE} \
+    --sp-id 343618191391 \
+    --username pedrom@ifit.com
+
+  exit_code=$?
+
+  if [ ${exit_code} != 0 ]; then
+    echo "failed to retrieve credentials"
+    return "${exit_code}"
+  fi
+
+  if [ -n "${AWS_PROFILE}" ]; then
+    if [ "${AWS_PROFILE}" != "${ROLE}" ]; then
+      echo "INFO: The environment variable \`AWS_PROFILE\` has been changed from \`${AWS_PROFILE}\` to \`${ROLE}\`. Use \`export AWS_PROFILE=${AWS_PROFILE}\` if you want to restore it."
+    fi
+  else
+    echo "INFO: The environment variable \`AWS_PROFILE\` has been set to \`${ROLE}\`. Use \`unset AWS_PROFILE\` if you want to unset it."
+  fi
+
+  export AWS_PROFILE="${ROLE}"
 }
 
 echo "loaded profile-ifit."
