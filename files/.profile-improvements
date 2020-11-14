@@ -20,7 +20,8 @@ alias top='htop'
 
 # Always list directory contents upon 'cd', AND changes node version thru `nvm use`
 cd() {
-  builtin cd "$@" ; ll ; checkNVM
+#   builtin cd "$@" ; ll ; checkNVM
+  builtin cd "$@" ; ll ;
 }
 
 alias finder='open -a Finder ./'            # f:            Opens current directory in MacOS Finder
@@ -69,6 +70,8 @@ alias qfind="find . -name "                 # qfind:    Quickly search for file
 ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
 ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
 ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
+
+open-file () { f --print0 -e | xargs -0 code }
 
 #   spotlight: Search for a file using MacOS Spotlight's metadata
 #   -----------------------------------------------------------
